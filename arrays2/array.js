@@ -50,3 +50,21 @@ const outros = arr.slice(-4)
 console.log(arr)
 console.log(hobbits)
 console.log(outros)
+
+//Concatenando arrays e elementos usando o CONCAT
+const sociedade = hobbits.concat(outros, "Boromir")
+console.log(sociedade)
+
+//Substituindo elementos usando o SPLICE
+//Requer 3 parâmetros ( indice do elemento a ser substituido, qtos elementos serão substituidos, qual valor(es) será incluido)
+// Caso seja adicionado mais valores do que o numero de elementos a ser substituido, eles serao somados a lista, sem remover outros elementos
+//const elementosRemovidos = sociedade.splice(indice, 1 , "Gandalf, o Cinzento", 1,3, false, true)
+const elementosRemovidos = sociedade.splice(indice, 1 , "Gandalf, o Cinzento")
+console.log(sociedade)
+console.log(elementosRemovidos)
+
+//Fazendo iterações com elementos de um array
+for(let indice = 0; indice < sociedade.length; indice++){
+    const elemento = sociedade[indice]
+    console.log(elemento + " se encontra na posição " + indice)
+}
