@@ -26,7 +26,10 @@ do {
     break
     case "2": 
     carta = baralho.pop()
-        alert("A carta retirada foi a  " + carta)
+    if(carta)
+        {alert("A carta retirada foi a  " + carta)
+        }else {alert("Baralho vazio!")}
+        
     break
     case "3":
         alert("Encerrando o programa...")
