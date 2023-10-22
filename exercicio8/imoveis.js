@@ -2,30 +2,40 @@ const listaImoveis = []
 let menu = ""
 
 
-do{ let imovel ={}
-    
-    for (let i = 0; i < listaImoveis.length; i++) {
-        const elemento = listaImoveis[i]
-        console.log(elemento)
-      }
+do{    
    menu = prompt("Quantidade de imóveis cadastrados: " + listaImoveis.length +
     "\nEscolha uma opção abaixo:\n \n1- Cadastrar um novo imóvel \n2- Ver lista de imóveis \n3- Sair")
 
 switch(menu){
     case "1":
+        const imovel ={}
         imovel.proprietario = prompt("Indique o nome do proprietário:")
-        imovel.quarto = prompt("Indique a quantidade de quartos:")
-        imovel.banheiro = prompt("Indique a quantidade de banheiros.")
+        imovel.quarto = parseFloat(prompt("Indique a quantidade de quartos:"))
+        imovel.banheiro = parseFloat(prompt("Indique a quantidade de banheiros."))
         imovel.garagem = prompt("Existe garagem no imóvel? (Sim/Não)")
-        listaImoveis.push(imovel)
+
+        const confirma = confirm(
+            "Salvar este imóvel?\n" +
+            "\nProprietário: " + imovel.proprietario +
+            "\nQuartos: " + imovel.quarto +
+            "\nBanheiros: " + imovel.banheiro +
+            "\nPossui Garagem? " + imovel.garagem
+          )
+          if (confirma){
+            listaImoveis.push(imovel)
+        }
     break
 
     case "2":
-        if(imoveis){
-            alert("Lista de imoveis cadastrados:\n"+ imovel + ".\n")
-        }else{
-            alert("Não existem imóveis cadastrados!")
-        }
+        for (let i = 0; i < listaImoveis.length; i++) {
+            alert(
+              "Imóvel " + (i + 1) +
+              "\nProprietário: " + listaImoveis[i].proprietario +
+              "\nQuartos: " + listaImoveis[i].quarto +
+              "\nBanheiros: " + listaImoveis[i].banheiro +
+              "\nPossui Garagem? " + listaImoveis[i].garagem
+            )
+          }
         
     break
     
